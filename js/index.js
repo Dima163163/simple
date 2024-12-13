@@ -2,6 +2,7 @@ const initMenu = () => {
   const burgerBtn = document.querySelector('.header_burger');
   const mobileMenu = document.querySelector('.header_mobile_menu');
   const closeBtn = document.querySelector('header_burger_close');
+  
 
   const openCloseMenu = () => {
     burgerBtn.classList.toggle('active');
@@ -19,6 +20,14 @@ const initMenu = () => {
       openCloseMenu()
     })
   }
+
+  mobileMenu.addEventListener('click', (e) => {
+    const target = e.target;
+
+    if (target.closest('.nav_link')) {
+      openCloseMenu()
+    }
+  })
 }
 
 initMenu()
